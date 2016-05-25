@@ -90,11 +90,11 @@ GitBucketにプロキシ設定を認識させる必要がありました。
 VMパラメータでプロキシ指定ができるようです。  
 homebrew.mxcl.gitbucket.plistにパラメータを追記します。
 
-    <string>-Dhttp.proxyHost=172.16.248.253 -Dhttp.proxyPort=8080 -Dhttps.proxyHost=172.16.248.253 -Dhttps.proxyPort=8080</string>
+    <string>-Dhttp.proxyHost=172.16.248.253 -Dhttp.proxyPort=8080 -Dhttps.proxyHost=172.16.248.253 -Dhttps.proxyPort=8080 -Dhttp.nonProxyHosts=172.16.*</string>
 
 直接コンソールからGitBucketを起動するのであれば、JAVA_TOOL_OPTIONS環境変数を設定します。
 
-    export "JAVA_TOOL_OPTIONS=-Dhttp.proxyHost=172.16.248.253 -Dhttp.proxyPort=8080 -Dhttps.proxyHost=172.16.248.253 -Dhttps.proxyPort=8080"
+    export "JAVA_TOOL_OPTIONS=-Dhttp.proxyHost=172.16.248.253 -Dhttp.proxyPort=8080 -Dhttps.proxyHost=172.16.248.253 -Dhttps.proxyPort=8080 -Dhttp.nonProxyHosts=172.16.*"
 
 ## WebHookService.scala
 
