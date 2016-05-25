@@ -116,7 +116,6 @@ val httpClient = HttpClientBuilder.create.useSystemProperties.addInterceptorLast
     > compile
     [info] Updating {file:/Users/matoh/Desktop/gitbucket-master/}root...
     (中略)
-    > compile
     > packageBin
     [info] Packaging /Users/matoh/Desktop/gitbucket-master/target/scala-2.11/gitbucket_2.11-4.0.0.jar ...
     [info] Done packaging.
@@ -128,7 +127,7 @@ val httpClient = HttpClientBuilder.create.useSystemProperties.addInterceptorLast
 1. /usr/local/opt/gitbucket/libexec配下のgitbucket.warを展開（作業ディレクトリに展開）
 1. 作成したjarをWEB-INF/lib配下にコピー（上書き）
 1. 作業ディレクトリで以下のコマンドを実行
-
-    jar cvfm ../gitbucket.war META-INF/MANIFEST.MF .
-
+```
+    $ jar cvfm ../gitbucket.war META-INF/MANIFEST.MF .
+```
 
