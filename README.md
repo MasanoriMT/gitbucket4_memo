@@ -137,3 +137,15 @@ val httpClient = HttpClientBuilder.create.useSystemProperties.addInterceptorLast
     $ jar cvfm ../gitbucket.war META-INF/MANIFEST.MF .
 ```
 
+# GitHub Pull Request Builder
+
+プルリクエストされたタイミングで検証用のJenkinsジョブを実行するために、このプラグインを利用してみました。
+設定項目が多いこともあり、なかなかうまく動作しなかったのですが、GitBucketがGitHubのWeb APIを完全に網羅していないこともあって、一部機能しない点もありました。
+少なくとも、ジョブ設定において、以下の項目をチェックしてしまうと、JenkinsからGitBucketへのAPI呼び出しが失敗して、思ったようにジョブが起動しなくなってしまうようでした。
+
+Use github hooks for build triggering
+
+プルリクエストがあってすぐにジョブが動きだすわけではなく、cronで定期的にJenkins側から問い合わせすることでビルドが走るようになります。
+
+JenkinsからGitBucketへのリクエストは、Charlesで確認することができます。
+Jenkinsのプロキシ設定をCharlesに向けることで、どのようなAPIを呼び出しているかをCharlesで検知します。
