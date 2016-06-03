@@ -106,6 +106,12 @@ homebrew.mxcl.gitbucket.plistにパラメータを追記します。
 
 残念なことにVMパラメータを設定しても、その設定が有効にならないようでした。
 
+```
+（追記）  
+以下の修正のプルリクエストを出したところマージされました。  
+4.1ではこの問題は解消されていると思いますので、以下の手順は不要になるはずです。
+```
+
 http://qiita.com/uzresk/items/bc7c4a9dc764390cd5ce
 
 GitBucketのソースコードを見る限り、HttpClientを利用しているようなのですが、useSystemPropertiesされていません。
